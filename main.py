@@ -1,6 +1,9 @@
 # importar el archivo donde tengo la clase creada
-from clase import Persona,Libro, CuentaCorreo, Cuenta, Producto, Empleado
+from clase import Persona, Libro, CuentaCorreo, Cuenta, Producto, Empleado
 
+"""
+    Practica clase Persona
+"""
 # instancia de la clase Persona
 # persona = Persona("Joffred")
 # persona.saludar()
@@ -14,6 +17,9 @@ from clase import Persona,Libro, CuentaCorreo, Cuenta, Producto, Empleado
 # Accediendo al atributo protegido (no recomendado, pero posible)
 # print("Altura (protegido):", persona._altura)  # 1.
 
+"""
+    Practica clase Libro
+"""
 # libros_nuevos = 2000
 
 # libro_1 = Libro("Cien Años de Soledad", "Gabriel García Márquez", 1967)
@@ -33,6 +39,10 @@ from clase import Persona,Libro, CuentaCorreo, Cuenta, Producto, Empleado
 # else:
 #     print("El libro es antiguo.")
 
+
+"""
+    Practica clase CuentaCorreo
+"""
 # email = input("Ingrese su correo electrónico: ")
 # contrasena = input("Ingrese su contraseña: ")
 # servidor = input("Ingrese el servidor de correo (e.g., smtp.example.com): ")
@@ -54,6 +64,7 @@ from clase import Persona,Libro, CuentaCorreo, Cuenta, Producto, Empleado
 # password = cuenta_correo.get_password()
 # print("Nueva contraseña:", password)
 
+
 # cuenta_corriente = Cuenta() # instancia de la clase Cuenta
 # cuenta_corriente.get_saldo() # 0
 # monto = input("Ingrese el monto para establecer el saldo: ")
@@ -65,6 +76,9 @@ from clase import Persona,Libro, CuentaCorreo, Cuenta, Producto, Empleado
 # else:
 #     print("Por favor, ingrese un monto válido.")
 
+"""
+    Practica clase Producto
+"""
 # nombre = input("Ingrese el nombre del producto: ")
 # precio = input("Ingrese el precio del producto: ")
 # precio = float(precio)
