@@ -180,43 +180,43 @@ class Empleado:
         return salario > umbral # una condicion que devuelve True o False
     
 # Primera instancia de la clase.
-empleado_1 = Empleado("Ana", 600000)
-print(f"Nombre empleado: {empleado_1.nombre}, Salario: {empleado_1.salario}")
-aumento_1 = Empleado.aumento_general
-print(f"Aumento general actual: {aumento_1}")
-print(f"El aumento del empleado {empleado_1.nombre} es: {empleado_1.salario * aumento_1}")
-# verificacion si el sueldo es alto de este trabajador
-if Empleado.es_sueldo_alto(empleado_1.salario):
-    print(f"El salario de {empleado_1.nombre} es alto.")
-else:
-    print(f"El salario de {empleado_1.nombre} es bajo.")
+# empleado_1 = Empleado("Ana", 600000)
+# print(f"Nombre empleado: {empleado_1.nombre}, Salario: {empleado_1.salario}")
+# aumento_1 = Empleado.aumento_general
+# print(f"Aumento general actual: {aumento_1}")
+# print(f"El aumento del empleado {empleado_1.nombre} es: {empleado_1.salario * aumento_1}")
+# # verificacion si el sueldo es alto de este trabajador
+# if Empleado.es_sueldo_alto(empleado_1.salario):
+#     print(f"El salario de {empleado_1.nombre} es alto.")
+# else:
+#     print(f"El salario de {empleado_1.nombre} es bajo.")
 
-print("-----------------------------------")
+# print("-----------------------------------")
 
-empleado_2 = Empleado("Luis", 400000)
-print(f"Nombre empleado: {empleado_2.nombre}, Salario: {empleado_2.salario}")
-Empleado.modificar_aumento_general(1.20)
-aumento_2 = Empleado.aumento_general
-print(f"Aumento general actual: {aumento_2}")
-print(f"El aumento del empleado {empleado_2.nombre} es: {empleado_2.salario * aumento_2}")
-if Empleado.es_sueldo_alto(empleado_2.salario, umbral=600000):
-    print(f"El salario de {empleado_2.nombre} es alto.")
-else:
-    print(f"El salario de {empleado_2.nombre} es bajo.")
+# empleado_2 = Empleado("Luis", 400000)
+# print(f"Nombre empleado: {empleado_2.nombre}, Salario: {empleado_2.salario}")
+# Empleado.modificar_aumento_general(1.20)
+# aumento_2 = Empleado.aumento_general
+# print(f"Aumento general actual: {aumento_2}")
+# print(f"El aumento del empleado {empleado_2.nombre} es: {empleado_2.salario * aumento_2}")
+# if Empleado.es_sueldo_alto(empleado_2.salario, umbral=600000):
+#     print(f"El salario de {empleado_2.nombre} es alto.")
+# else:
+#     print(f"El salario de {empleado_2.nombre} es bajo.")
 
-print("-----------------------------------")
-empleado_3 = Empleado("Jorge", 700000)
-print(f"Nombre empleado: {empleado_3.nombre}, Salario: {empleado_3.salario}")
-Empleado.modificar_aumento_general(3.00)
-aumento_3 = Empleado.aumento_general
-print(f"Aumento general actual: {Empleado.aumento_general}")
-print(f"valor del salio: {empleado_3.salario}")
-print(f"valor del aumento: {aumento_3}")
-print(f"El aumento del empleado {empleado_3.nombre} es: {empleado_3.salario * aumento_3}")
-if Empleado.es_sueldo_alto(empleado_3.salario, umbral=700000):
-    print(f"El salario de {empleado_3.nombre} es alto.")
-else:
-    print(f"El salario de {empleado_3.nombre} es bajo.")
+# print("-----------------------------------")
+# empleado_3 = Empleado("Jorge", 700000)
+# print(f"Nombre empleado: {empleado_3.nombre}, Salario: {empleado_3.salario}")
+# Empleado.modificar_aumento_general(3.00)
+# aumento_3 = Empleado.aumento_general
+# print(f"Aumento general actual: {Empleado.aumento_general}")
+# print(f"valor del salio: {empleado_3.salario}")
+# print(f"valor del aumento: {aumento_3}")
+# print(f"El aumento del empleado {empleado_3.nombre} es: {empleado_3.salario * aumento_3}")
+# if Empleado.es_sueldo_alto(empleado_3.salario, umbral=700000):
+#     print(f"El salario de {empleado_3.nombre} es alto.")
+# else:
+#     print(f"El salario de {empleado_3.nombre} es bajo.")
 
 
 

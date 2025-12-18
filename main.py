@@ -1,5 +1,5 @@
 # importar el archivo donde tengo la clase creada
-from clase import Persona,Libro, CuentaCorreo, Cuenta, Producto
+from clase import Persona,Libro, CuentaCorreo, Cuenta, Producto, Empleado
 
 # instancia de la clase Persona
 # persona = Persona("Joffred")
@@ -65,15 +65,44 @@ from clase import Persona,Libro, CuentaCorreo, Cuenta, Producto
 # else:
 #     print("Por favor, ingrese un monto válido.")
 
-nombre = input("Ingrese el nombre del producto: ")
-precio = input("Ingrese el precio del producto: ")
-precio = float(precio)
-producto = Producto(nombre, precio) # instancia de la clase Producto
-precio = producto.get_precio()
-print(f"El precio del producto '{nombre}' es: {precio}")
+# nombre = input("Ingrese el nombre del producto: ")
+# precio = input("Ingrese el precio del producto: ")
+# precio = float(precio)
+# producto = Producto(nombre, precio) # instancia de la clase Producto
+# precio = producto.get_precio()
+# print(f"El precio del producto '{nombre}' es: {precio}")
 
-precio_nuevo = input("Ingrese el precio nuevo del producto: ")
-precio_nuevo = float(precio_nuevo)
-producto.set_precio(precio_nuevo) # modificar el precio usando el setter
-precio = producto.get_precio()
-print(f"El precio del producto '{nombre}' es: {precio}")
+# precio_nuevo = input("Ingrese el precio nuevo del producto: ")
+# precio_nuevo = float(precio_nuevo)
+# producto.set_precio(precio_nuevo) # modificar el precio usando el setter
+# precio = producto.get_precio()
+# print(f"El precio del producto '{nombre}' es: {precio}")
+
+"""
+Ejercicio con la clase Empleado:
+"""
+cantidad_empleados = 3
+empleados = []
+
+for i in range(cantidad_empleados):
+    print(f"Ingrese los datos del empleado {i+1}:")
+    nombre = input(f"Ingrese el nombre del empleado: ")
+    salario = input(f"Ingrese el salario del empleado: ")
+    salario = float(salario)
+    empleado = Empleado(nombre, salario)
+    empleados.append(empleado)
+    if i > 0:
+        aumento = input(f"Ingrese el aumento para el empleado ej 1.30 {empleado.nombre}: ")
+        aumento = float(aumento)
+        Empleado.modificar_aumento_general(aumento)
+    else:
+        print("No se aplicará aumento al primer empleado.")
+
+print("\nInformación de los empleados:")
+for empleado in empleados:
+    print(f"Nombre: {empleado.nombre}, Salario: {empleado.salario}, Salario con aumento: {empleado.salario * Empleado.aumento_general}")
+    if Empleado.es_sueldo_alto(empleado.salario):
+        print(f"El salario de {empleado.nombre} es alto.")
+    else:
+        print(f"El salario de {empleado.nombre} es bajo.")
+
