@@ -147,5 +147,77 @@ class Producto:
         else:
             print("El precio no puede ser negativo.")
 
+"""
+¿En qué consistirá la Demo?
+Vas a diseñar una clase que modele un empleado, incorporando tanto un método de clase como uno estático
+para aplicar distintos tipos de comportamiento.
+1.🔹 Lo que deberá tener la clase:
+    ● Atributos públicos como nombre y salario (listo)
+    ● Un atributo de clase llamado aumento_general con un valor inicial (ej. 1.05) (listo)
+    ● Un método de clase que permita modificar el porcentaje de aumento general para todos los empleados (listo)
+    ● Un método estático que reciba un salario y verifique si supera un cierto umbral (ej.sueldo mínimo)(listo)
+2.🔹 Qué se debe probar:
+    ● Crear varios empleados con salarios distintos
+    ● Modificar el aumento general desde la clase
+    ● Usar el método estático para evaluar si un salario es alto 
+"""
+
+class Empleado:
+    # atributos publicos
+    aumento_general = 1.05
+
+    # constructor
+    def __init__(self, nombre, salario):
+        self.nombre = nombre
+        self.salario = salario
+
+    @classmethod
+    def modificar_aumento_general(cls, nuevo_aumento):
+        cls.aumento_general = nuevo_aumento
+
+    @staticmethod
+    def es_sueldo_alto(salario, umbral=500000): # unbral = 3000 es un valor por defecto
+        return salario > umbral # una condicion que devuelve True o False
     
+# Primera instancia de la clase.
+empleado_1 = Empleado("Ana", 600000)
+print(f"Nombre empleado: {empleado_1.nombre}, Salario: {empleado_1.salario}")
+aumento_1 = Empleado.aumento_general
+print(f"Aumento general actual: {aumento_1}")
+print(f"El aumento del empleado {empleado_1.nombre} es: {empleado_1.salario * aumento_1}")
+# verificacion si el sueldo es alto de este trabajador
+if Empleado.es_sueldo_alto(empleado_1.salario):
+    print(f"El salario de {empleado_1.nombre} es alto.")
+else:
+    print(f"El salario de {empleado_1.nombre} es bajo.")
+
+print("-----------------------------------")
+
+empleado_2 = Empleado("Luis", 400000)
+print(f"Nombre empleado: {empleado_2.nombre}, Salario: {empleado_2.salario}")
+Empleado.modificar_aumento_general(1.20)
+aumento_2 = Empleado.aumento_general
+print(f"Aumento general actual: {aumento_2}")
+print(f"El aumento del empleado {empleado_2.nombre} es: {empleado_2.salario * aumento_2}")
+if Empleado.es_sueldo_alto(empleado_2.salario, umbral=600000):
+    print(f"El salario de {empleado_2.nombre} es alto.")
+else:
+    print(f"El salario de {empleado_2.nombre} es bajo.")
+
+print("-----------------------------------")
+empleado_3 = Empleado("Jorge", 700000)
+print(f"Nombre empleado: {empleado_3.nombre}, Salario: {empleado_3.salario}")
+Empleado.modificar_aumento_general(3.00)
+aumento_3 = Empleado.aumento_general
+print(f"Aumento general actual: {Empleado.aumento_general}")
+print(f"valor del salio: {empleado_3.salario}")
+print(f"valor del aumento: {aumento_3}")
+print(f"El aumento del empleado {empleado_3.nombre} es: {empleado_3.salario * aumento_3}")
+if Empleado.es_sueldo_alto(empleado_3.salario, umbral=700000):
+    print(f"El salario de {empleado_3.nombre} es alto.")
+else:
+    print(f"El salario de {empleado_3.nombre} es bajo.")
+
+
+
     
