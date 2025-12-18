@@ -1,5 +1,5 @@
 # importar el archivo donde tengo la clase creada
-from clase import Persona,Libro, CuentaCorreo
+from clase import Persona,Libro, CuentaCorreo, Cuenta, Producto
 
 # instancia de la clase Persona
 # persona = Persona("Joffred")
@@ -33,23 +33,47 @@ from clase import Persona,Libro, CuentaCorreo
 # else:
 #     print("El libro es antiguo.")
 
-email = input("Ingrese su correo electrónico: ")
-contrasena = input("Ingrese su contraseña: ")
-servidor = input("Ingrese el servidor de correo (e.g., smtp.example.com): ")
+# email = input("Ingrese su correo electrónico: ")
+# contrasena = input("Ingrese su contraseña: ")
+# servidor = input("Ingrese el servidor de correo (e.g., smtp.example.com): ")
 
-# instancia de la clase CuentaCorreo
-cuenta_correo = CuentaCorreo(email, contrasena, servidor)
-# metodo para mostrar la info del correo
-cuenta_correo.mostrar_info()
+# # instancia de la clase CuentaCorreo
+# cuenta_correo = CuentaCorreo(email, contrasena, servidor)
+# # metodo para mostrar la info del correo
+# cuenta_correo.mostrar_info()
 
-# para acceder al atributo privado (password)
-password = cuenta_correo.get_password()
-print("Contraseña:", password)
+# # para acceder al atributo privado (password)
+# password = cuenta_correo.get_password()
+# print("Contraseña:", password)
 
-password_nuevo = input("Ingrese la nueva contraseña: ")
-# para modificar el atributo privado (password)
-cuenta_correo.set_password(password_nuevo)
+# password_nuevo = input("Ingrese la nueva contraseña: ")
+# # para modificar el atributo privado (password)
+# cuenta_correo.set_password(password_nuevo)
 
-# para acceder al atributo privado (password)
-password = cuenta_correo.get_password()
-print("Nueva contraseña:", password)
+# # para acceder al atributo privado (password)
+# password = cuenta_correo.get_password()
+# print("Nueva contraseña:", password)
+
+# cuenta_corriente = Cuenta() # instancia de la clase Cuenta
+# cuenta_corriente.get_saldo() # 0
+# monto = input("Ingrese el monto para establecer el saldo: ")
+# # if monto.isdigit():
+# if cuenta_corriente.validar_monto(monto):
+#     monto = float(monto)
+#     cuenta_corriente.set_saldo(monto)
+#     print("Saldo actualizado:", cuenta_corriente.get_saldo())
+# else:
+#     print("Por favor, ingrese un monto válido.")
+
+nombre = input("Ingrese el nombre del producto: ")
+precio = input("Ingrese el precio del producto: ")
+precio = float(precio)
+producto = Producto(nombre, precio) # instancia de la clase Producto
+precio = producto.get_precio()
+print(f"El precio del producto '{nombre}' es: {precio}")
+
+precio_nuevo = input("Ingrese el precio nuevo del producto: ")
+precio_nuevo = float(precio_nuevo)
+producto.set_precio(precio_nuevo) # modificar el precio usando el setter
+precio = producto.get_precio()
+print(f"El precio del producto '{nombre}' es: {precio}")

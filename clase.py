@@ -97,5 +97,55 @@ class CuentaCorreo:
     def set_password(self, nuevo_password):
         self.__password = nuevo_password
 
+class Cuenta:
+    def __init__(self):
+        self.__saldo = 0  # atributo privado
+
+    # getter
+    def get_saldo(self):
+        return self.__saldo
+    
+    # setter
+    def set_saldo(self, monto):
+        if monto >= 0:
+            self.__saldo = monto
+        else:
+            print("El saldo no puede ser negativo.")
+
+    def validar_monto(self, monto):
+        if  monto.isdigit():
+            return True
+        else:
+            return False
+        
+"""
+Vas a diseñar una clase que represente un producto de tienda, controlando el acceso y modificación del precio a
+través de métodos específicos.
+1.🔹 Qué debe tener la clase:
+    ● Un atributo público para el nombre del producto (listo)
+    ● Un atributo privado para el precio (__precio) (listo)
+    ● Un método para ver el precio (getter) (listo)
+    ● Un método para modificar el precio (setter), que solo permita valores positivos (listo)
+    ● En el constructor (__init__), usar el setter para validar el precio desde el inicio (listo)
+2.🔹 Qué se debe probar con objetos:
+    ● Crear un producto con precio válido
+    ● Mostrar el precio usando el getter
+    ● Intentar cambiar el precio a un valor negativo (debe mostrar un error)
+    ● Modificar correctamente el precio y verificar el nuevo valor
+"""
+class Producto:
+    def __init__(self,nombre, precio):
+        self.nombre = nombre  # atributo publico
+        self.set_precio(precio)  # usar el setter para validar el precio
+
+    def get_precio(self):
+        return self.__precio
+    
+    def set_precio(self, nuevo_precio):
+        if nuevo_precio >= 0:
+            self.__precio = nuevo_precio
+        else:
+            print("El precio no puede ser negativo.")
+
     
     
